@@ -1,0 +1,36 @@
+version: "3.3"
+services:
+  php_apache:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php8_0_2_apache_speed
+    volumes:
+      - ./php:/var/www/html/
+    ports:
+      - 8080:80
+
+  db:
+    container_name: mysql_speed
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./mysql:/var/www/html/
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    container_name: phpmyadmin_speed
+    image: phpmyadmin
+    ports:
+      - 8000:80
+
+  mailcatcher:
+    container_name: STMP_server_speed
+    restart: on-failure
+    image: dockage/mailcatcher:0.8.2
+    ports:
+      - 1080:1080
+      - 1025:1025

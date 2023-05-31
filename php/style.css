@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 24px;
+}
+
+th {
+  background-color: #adb5bd;
+  color: #fff;
+}
+
+tr:nth-child(odd) {
+  background-color: #dee2e6;
+}
+
+td,
+th {
+  padding: 24px;
+}
