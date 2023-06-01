@@ -1,0 +1,13 @@
+/*************/
+/* CARTE CAMIONS */
+/*************/
+
+.main_carte_camion {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9.6rem 9.6rem;
+}
