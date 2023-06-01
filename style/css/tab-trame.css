@@ -1,0 +1,66 @@
+/*************/
+/* PAGE TRAME */
+/*************/
+
+.main_tab_trame {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9.6rem 9.6rem;
+}
+
+.btn_contact {
+  width: 150px;
+}
+
+.btn_table {
+  display: flex;
+  gap: 4.8rem;
+}
+
+.add_link {
+  text-decoration: none;
+  width: 300px;
+  border-radius: 50px;
+}
+
+.tab_trame {
+  width: 1000px;
+  text-align: center;
+  border-radius: 1rem;
+  border-collapse: collapse;
+  overflow: hidden;
+
+  padding-bottom: 9.6rem;
+}
+
+.tab_trame th {
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+.tab_trame td {
+  font-size: 3.6rem;
+  padding: 2.4rem;
+}
+
+.tab_trame td:first-child {
+  width: 30%;
+}
+
+.tab_trame thead th {
+  padding: 2.4rem;
+  background-color: #339af0;
+  color: #fff;
+}
+
+.tab_trame tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+.tab_trame tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
