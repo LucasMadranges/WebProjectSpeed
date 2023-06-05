@@ -1,0 +1,70 @@
+/*************/
+/* CARTE CAMIONS */
+/*************/
+
+.main_carte_camion {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9.6rem 9.6rem;
+}
+
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 1000px;
+  width: 100%;
+  margin-bottom: 9.6rem;
+}
+
+.btn_table {
+  display: flex;
+  gap: 4.8rem;
+}
+
+.add_link {
+  text-decoration: none;
+  width: 300px;
+  border-radius: 50px;
+}
+
+.tab_camion {
+  width: 1000px;
+  text-align: center;
+  border-radius: 1rem;
+  border-collapse: collapse;
+  overflow: hidden;
+
+  padding-bottom: 9.6rem;
+}
+
+.tab_camion th {
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+.tab_camion td {
+  font-size: 3.6rem;
+  padding: 2.4rem;
+}
+
+.tab_camion td:first-child {
+  width: 30%;
+}
+
+.tab_camion thead th {
+  padding: 2.4rem;
+  background-color: #339af0;
+  color: #fff;
+}
+
+.tab_camion tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+.tab_camion tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}

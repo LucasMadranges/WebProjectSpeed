@@ -1,0 +1,42 @@
+/*************/
+/* FOOTER */
+/*************/
+
+.footer_page {
+  height: 300px;
+  background-color: #0a1f30;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.footer_link_logo {
+  display: flex;
+  gap: 4.8rem;
+  justify-content: center;
+  padding-top: 4.8rem;
+}
+
+.nav_footer:link,
+.nav_footer:visited {
+  color: #fff;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+
+.nav_footer:hover,
+.nav_footer:active {
+  text-decoration: none;
+  color: #339af0;
+}
+
+.logo_footer {
+  filter: brightness(100);
+}
+
+.copyright {
+  font-size: 1.8rem;
+}
