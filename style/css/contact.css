@@ -1,0 +1,90 @@
+/*************/
+/* CONTACT */
+/*************/
+
+.main_page_contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9.6rem 9.6rem;
+}
+
+.container_paragraphe {
+  width: 35rem;
+  text-align: center;
+}
+
+.contact_text {
+  font-size: 2.4rem;
+}
+
+.container_contact {
+  width: 90rem;
+  padding: 4.8rem;
+  background-color: #f8f9fa;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.container_text_contact {
+  height: 5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: #aaa solid 1px;
+  background-color: #eee;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form_contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 48px;
+}
+
+.container_text_email {
+  grid-column: 1 / -1;
+}
+
+.container_text_phone {
+  grid-column: 1 / -1;
+}
+
+.container_text_poste {
+  grid-column: 1 / -1;
+}
+
+.container_text_message {
+  grid-column: 1 / -1;
+}
+
+.btn--grid {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.logo_contact {
+  height: 35px;
+  stroke: #868e96;
+  padding-left: 8px;
+}
+
+.input_contact {
+  border: none;
+  background-color: #eee;
+  height: 2.8rem;
+  width: 78%;
+  font-size: 2.4rem;
+  color: #868e96;
+  outline: none;
+}
+
+.input_contact::placeholder {
+  color: #868e96;
+}
