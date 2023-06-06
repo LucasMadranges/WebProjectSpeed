@@ -41,7 +41,7 @@ include '../script/connexionBDD.php';
       <form action="carte_camions.php" method="post">
         <input name="afficher_camion" type="submit" value="Afficher les camions" class="btn" />
       </form>
-      <a href="#" class="btn add_link">Ajouter un camion</a>
+      <a href="add_camion.php" class="btn add_link">Ajouter un camion</a>
     </div>
     <?php
       $connexion = "";
@@ -80,9 +80,9 @@ include '../script/connexionBDD.php';
     <div class="footer_link_logo">
       <img src="../img/logo/logo_speed.png" alt="Logo Speed" class="logo_speed logo_footer" />
       <nav class="nav_bar">
-        <a href="tab_trame.html" class="nav_link nav_footer">Liste des trames</a>
-        <a href="carte_camions.html" class="nav_link nav_footer">Carte des camions</a>
-        <a href="contact.html" class="nav_link nav_footer">Contact</a>
+        <a href="tab_trame.php" class="nav_link nav_footer">Liste des trames</a>
+        <a href="carte_camions.php" class="nav_link nav_footer">Carte des camions</a>
+        <a href="contact.php" class="nav_link nav_footer">Contact</a>
       </nav>
     </div>
     <span class="copyright">Copyright © 2023 Lucas Madranges</span>

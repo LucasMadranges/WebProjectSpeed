@@ -1,0 +1,81 @@
+/*************/
+/* ADD CAMION */
+/*************/
+
+.main_add_camion {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 9.6rem 9.6rem;
+}
+
+.btn_table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 35px;
+}
+
+.retour_link {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  margin-bottom: 4.8rem;
+}
+
+.form_add_camion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input_text {
+  width: 50rem;
+  height: 5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: #aaa solid 1px;
+  background-color: #eee;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 16px;
+}
+
+.form_icon {
+  height: 35px;
+  stroke: #868e96;
+  padding-left: 8px;
+}
+
+.input_text_zone {
+  border: none;
+  background-color: #eee;
+  height: 2.8rem;
+  width: 78%;
+  font-size: 2.4rem;
+  color: #868e96;
+  outline: none;
+}
+
+.input_text_zone::placeholder {
+  color: #868e96;
+}
+
+.form_text {
+  font-size: 3.2rem;
+}

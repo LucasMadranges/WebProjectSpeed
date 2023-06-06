@@ -85,7 +85,7 @@ include 'script/connexionBDD.php';
                 } else if ($connexiontab['mot_de_passe'] != $mot_de_passe) {
                   echo "<p class='text_connexion' style='color:red;'>Nom d'utilisateur ou mot de passe incorrect.</p>";
                 } else {
-                   echo "<p class='text_connexion' style='color:green;'>Connexion Réussi.</p>";
+                   echo "<p class='text_connexion' style='color:green;'>Connexion réussi.</p>";
                   echo "<p class='text_connexion' style='color:green;'>Redirection en cours dans 3 secondes.</p>";
                   echo "<meta http-equiv='refresh' content='3; url=http://localhost:8080/php/tab_trame.php'>";
                 }
