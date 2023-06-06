@@ -1,3 +1,9 @@
+<?php 
+session_start();
+
+include '../script/connexionBDD.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,7 +25,7 @@
     <div class="header_connexion">
       <h1 class="header_title">Connexion à votre compte</h1>
     </div>
-    <form action="index.html" method="post">
+    <form action="index.php" method="post">
       <div class="main_connexion">
         <div class="text_icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -54,7 +60,7 @@
             </svg>
           </i>
         </div>
-        <input type="submit" value="Se connecter" class="btn" />
+        <input name="connexion" type="submit" value="Se connecter" class="btn" />
       </div>
     </form>
     <div class="footer_connexion">

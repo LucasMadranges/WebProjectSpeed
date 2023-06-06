@@ -1,3 +1,9 @@
+<?php 
+session_start();
+
+include '../script/connexionBDD.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -24,37 +30,52 @@
   <main class="main_tab_trame">
     <h1 class="heading_primary">Tableau des trames</h1>
     <div class="btn_table">
-      <form action="tab_trame.html" method="post">
-        <input type="submit" value="Afficher les trames" class="btn" />
+      <form action="tab_trame.php" method="post">
+        <input name="afficher_trame" type="submit" value="Afficher les trames" class="btn" />
       </form>
       <a href="#" class="btn add_link">Ajouter une trame</a>
     </div>
-    <table class="tab_trame">
-      <thead>
-        <tr>
-          <th>Trames</th>
-          <th>Commentaire</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>0x156</td>
-          <td>Déplacement du camion d'un point A à un point B.</td>
-        </tr>
-        <tr>
-          <td>0x156</td>
-          <td>Déplacement du camion d'un point A à un point B.</td>
-        </tr>
-        <tr>
-          <td>0x156</td>
-          <td>Déplacement du camion d'un point A à un point B.</td>
-        </tr>
-        <tr>
-          <td>0x156</td>
-          <td>Déplacement du camion d'un point A à un point B.</td>
-        </tr>
-      </tbody>
-    </table>
+    <?php
+      $connexion = "";
+      $connexion = connexionbdd();
+      if ($connexion != NULL) {
+        if (isset($_POST['afficher_trame']) != NULL) {
+          $requetesql = "SELECT * FROM TrameCamion"; 
+            $result = mysqli_query($connexion,$requetesql);
+              if($result == false) {  
+                echo "Requete SQL Echoué";
+              } else {
+                echo "<table class='tab_trame'>
+                <thead>
+                  <tr>
+                    <th>Début de Trame</th>
+                    <th>Numéro du camion</th>
+                    <th>Status du camion</th>
+                    <th>Destination x</th>
+                    <th>Destination y</th>
+                    <th>Vitesse max</th>
+                    <th>Fin de trame</th>
+                  </tr>
+                </thead>
+                <tbody>";
+  
+                  while ($ligne = mysqli_fetch_array($result)) {
+                    echo "<tr>
+                      <td>",$ligne['debut_trame'],"</td>
+                      <td>",$ligne['camion'],"</td>
+                      <td>",$ligne['status'],"</td>
+                      <td>",$ligne['destination_x'],"</td>
+                      <td>",$ligne['destination_y'],"</td>
+                      <td>",$ligne['vitesse'],"</td>
+                      <td>",$ligne['fin_trame'],"</td>
+                    </tr>";
+                  }   
+                echo '</tbody>
+                  </table>';
+                }
+              }
+            }
+    ?>
   </main>
   <footer class="footer_page">
     <div class="footer_link_logo">

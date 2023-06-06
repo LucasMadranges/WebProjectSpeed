@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+include '../script/connexionBDD.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,41 +38,43 @@
     <div id="viewDiv"></div>
     <h1 class="heading_primary">Tableau des camions</h1>
     <div class="btn_table">
-      <form action="carte_camions.html" method="post">
-        <input type="submit" value="Afficher les trames" class="btn" />
+      <form action="carte_camions.php" method="post">
+        <input name="afficher_camion" type="submit" value="Afficher les camions" class="btn" />
       </form>
       <a href="#" class="btn add_link">Ajouter un camion</a>
     </div>
-    <table class="tab_camion">
-      <thead>
-        <tr>
-          <th>Camion</th>
-          <th colspan="2">Position</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Longitude : 50</td>
-          <td>Lattitude : 2</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Longitude : 50</td>
-          <td>Lattitude : 2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Longitude : 50</td>
-          <td>Lattitude : 2</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Longitude : 50</td>
-          <td>Lattitude : 2</td>
-        </tr>
-      </tbody>
-    </table>
+    <?php
+      $connexion = "";
+      $connexion = connexionbdd();
+      if ($connexion != NULL) {
+        if (isset($_POST['afficher_camion']) != NULL) {
+          $requetesql = "SELECT * FROM ListeCamion"; 
+            $result = mysqli_query($connexion,$requetesql);
+              if($result == false) {  
+                echo "Requete SQL Echoué";
+              } else {
+                echo "<table class='tab_camion'>
+                <thead>
+                  <tr>
+                    <th>Camion</th>
+                    <th colspan='2'>Position</th>
+                  </tr>
+                </thead>
+                <tbody>";
+  
+                  while ($ligne = mysqli_fetch_array($result)) {
+                    echo "<tr>
+                      <td>",$ligne['Camion'],"</td>
+                      <td>",$ligne['Position_x'],"</td>
+                      <td>",$ligne['Position_y'],"</td>
+                    </tr>";
+                  }   
+                echo '</tbody>
+                  </table>';
+                }
+              }
+            }
+    ?>
   </main>
   <footer class="footer_page">
     <div class="footer_link_logo">

@@ -28,7 +28,7 @@
 }
 
 .tab_trame {
-  width: 1000px;
+  width: 1800px;
   text-align: center;
   border-radius: 1rem;
   border-collapse: collapse;
@@ -44,15 +44,14 @@
 
 .tab_trame td {
   font-size: 3.6rem;
-  padding: 2.4rem;
 }
 
-.tab_trame td:first-child {
-  width: 30%;
+.tab_trame td,
+.tab_trame th {
+  padding: 32px 16px;
 }
 
 .tab_trame thead th {
-  padding: 2.4rem;
   background-color: #339af0;
   color: #fff;
 }
