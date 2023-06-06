@@ -111,3 +111,8 @@ i .icon {
 #eye_off {
   display: none;
 }
+
+.text_connexion {
+  font-size: 2.4rem;
+  font-weight: 500;
+}

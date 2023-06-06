@@ -1,7 +1,8 @@
 <?php 
 session_start();
+error_reporting(0);
 
-include '../script/connexionBDD.php';
+include 'script/connexionBDD.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +19,7 @@ include '../script/connexionBDD.php';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -33,7 +35,7 @@ include '../script/connexionBDD.php';
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <input type="text" placeholder="Nom d'utilisateur" class="main_text_zone" />
+          <input name="nom_utilisateur" type="text" placeholder="Nom d'utilisateur" class="main_text_zone" required />
         </div>
 
         <div class="text_icon">
@@ -43,7 +45,8 @@ include '../script/connexionBDD.php';
               d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
           </svg>
 
-          <input type="password" placeholder="Mot de passe" class="main_text_zone password" id="password" />
+          <input name="mot_de_passe" type="password" placeholder="Mot de passe" class="main_text_zone password"
+            id="password" required />
           <i id="eye_on" onclick="eye_on()">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="icon_eye_on icon">
@@ -63,6 +66,33 @@ include '../script/connexionBDD.php';
         <input name="connexion" type="submit" value="Se connecter" class="btn" />
       </div>
     </form>
+    <?php
+      $nom_utilisateur = $_POST['nom_utilisateur'];
+      $mot_de_passe = $_POST['mot_de_passe'];
+      $url = "php/tab_trame.php";
+      $connexion = "";
+      $connexion = connexionbdd();
+      if ($connexion != NULL) {
+        if (isset($_POST['connexion']) != NULL) {
+          $requetesql = "SELECT * FROM `connexion` WHERE num_utilisateur = '".$nom_utilisateur."' AND mot_de_passe = '".$mot_de_passe."'"; 
+            $result = mysqli_query($connexion,$requetesql);
+              if($result == false) {  
+                echo "<p class='text_connexion' style='color:red;'>Requête MySQL Echoué.</p>";
+              } else {
+                $connexiontab = mysqli_fetch_array($result);
+                if ($connexiontab['num_utilisateur'] != $nom_utilisateur) {
+                  echo "<p class='text_connexion' style='color:red;'>Nom d'utilisateur ou mot de passe incorrect.</p>";
+                } else if ($connexiontab['mot_de_passe'] != $mot_de_passe) {
+                  echo "<p class='text_connexion' style='color:red;'>Nom d'utilisateur ou mot de passe incorrect.</p>";
+                } else {
+                   echo "<p class='text_connexion' style='color:green;'>Connexion Réussi.</p>";
+                  echo "<p class='text_connexion' style='color:green;'>Redirection en cours dans 3 secondes.</p>";
+                  echo "<meta http-equiv='refresh' content='3; url=http://localhost:8080/php/tab_trame.php'>";
+                }
+              }
+            }
+          }
+    ?>
     <div class="footer_connexion">
       <a href="php/tab_trame.php" class="footer_link">Mot de passe oublié ?</a>
     </div>

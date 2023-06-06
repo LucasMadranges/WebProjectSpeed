@@ -28,7 +28,7 @@
 }
 
 .tab_trame {
-  width: 1800px;
+  width: 1200px;
   text-align: center;
   border-radius: 1rem;
   border-collapse: collapse;
@@ -38,17 +38,17 @@
 }
 
 .tab_trame th {
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   font-weight: 400;
 }
 
 .tab_trame td {
-  font-size: 3.6rem;
+  font-size: 2.4rem;
 }
 
 .tab_trame td,
 .tab_trame th {
-  padding: 32px 16px;
+  padding: 24px 12px;
 }
 
 .tab_trame thead th {
