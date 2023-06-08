@@ -1,7 +1,7 @@
 <?php
 
 function connexionbdd() {
-  $ipserv = "172.25.0.1:3306"; #ADRESSE IP WIFI
+  $ipserv = ""; #ADRESSE IP WIFI
   $user = "root";
   $mdp = "12345";
   $nombdd = "SpeedBDD";

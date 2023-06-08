@@ -26,11 +26,3 @@ services:
     image: phpmyadmin
     ports:
       - 8000:80
-
-  mailcatcher:
-    container_name: STMP_server_speed
-    restart: on-failure
-    image: dockage/mailcatcher:0.8.2
-    ports:
-      - 1080:1080
-      - 1025:1025

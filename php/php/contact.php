@@ -37,7 +37,7 @@ include 'connexionbdd.php';
       </p>
     </div>
     <div class="container_contact">
-      <form action="contact.html" method="post" class="form_contact">
+      <form action="contact.php" method="post" class="form_contact">
         <div class="container_text_contact container_text_name">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="logo_contact">
@@ -92,6 +92,9 @@ include 'connexionbdd.php';
           <input type="text" name="message" class="input_contact" placeholder="Votre message" />
         </div>
         <input type="submit" value="Envoyer le mail" name="submit" class="btn btn--grid" />
+        <?php
+          mail('lucasmadranges06@gmail.com', 'Objet du courier', 'Message à envoyer'); 
+        ?>
       </form>
     </div>
   </main>
